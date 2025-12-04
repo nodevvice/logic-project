@@ -1,0 +1,92 @@
+# ***Top 모듈***
+> 웬만하면 모듈들만 합쳐놓음.
+```
+input        i_Clk;
+input        i_Rst;
+input  [3:0] i_Push;
+input        i_Start;
+input  [2:0] i_Option;
+
+(모듈 연결끼리 필요한 Wire들 생략)
+
+output [7:0] o_Row, o_Col;
+output [6:0] o_FNDS0, o_FNDS1, o_FNDS2, o_FNDS3;
+output [6:0] o_FNDC0, o_FNDC1;
+output [9:0] o_LED_HP;
+(output       o_Piezo*)
+
+```
+
+# ***Push Control 모듈***
+
+### (버튼 입력 1개씩)
+> 버튼 입력이 들어올 때, 신호를 보내고 10ms 정도 대기
+
+```
+input        i_Clk;
+input        i_Rst;
+input        i_Push; 
+
+필요한 레지스터 :
+
+state(2)
+timer(?)
+
+output wire  o_fPush;
+
+```
+
+# ***난수 생성 모듈***
+
+> 클락마다 16비트 난수 생성. 뒷 8비트만 잘라 게임에서 사용. 이후 그중 상위 4비트는 라인 결정에, 하위 4비트는 노트 생성 확률에 사용.
+
+```
+input             i_Clk;
+input             i_Rst; 
+
+(LFSR 구현)
+
+output wire [3:0] o_Rand;
+
+```
+
+# ***게임 로직 모듈***
+
+
+> 노트 이동시키기, 게임 상태 제어 등 핵심 기능
+
+```
+input        i_Clk;
+input        i_Rst;
+input  [3:0] i_Pulse;
+(Pulse : Top모듈에서 Push통제된 4개 신호 합쳐서 들어옴)
+
+input  [3:0] i_Randbit; 
+input  [1:0] i_Speed; (4배속까지 설정)
+input        i_ViewScore;
+
+
+필요한 레지스터 :
+
+Data(64) : 도트매트릭스에 줄 데이터
+Speed_Cnt(32) : 노트가 내려오는 속도 계산 카운터.
+(세부 점수 판정용으로도 사용)
+Speed_Max(32) : 배속에 따라서 바뀌는 speed_cnt의 최대치
+High_Score(16) : 최고 기록 저장 reg
+State(?)
+
+
+output wire [63:0] o_Data;
+output wire [15:0] o_Score;
+output wire [7:0]  o_Combo;
+output wire [9:0] o_HP;
+(output wire [1:0] o_Sound; 판정에 따라 소리내기 위한 값)
+
+```
+
+# ***다른 모듈들***
+
+### FND, DM ,(Sound)
+> 기타 모듈들..
+
+
