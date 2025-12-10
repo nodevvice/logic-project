@@ -1,4 +1,4 @@
-module PushControl(
+module One_PushControl(
     input  wire i_Clk,
     input  wire i_Rst,
     input  wire i_Push,     // 스위치(버튼) 입력
@@ -15,7 +15,7 @@ module PushControl(
     parameter DEBOUNCE_MAX = 500_000  // 10ms @ 50MHz 기준
 
     always @(posedge i_Clk or posedge i_Rst) begin
-        if (i_Rst) begin
+        if (!i_Rst) begin
             r_PushSync0 <= 1'b0;
             r_PushSync1 <= 1'b0;
         end else begin
@@ -42,7 +42,7 @@ module PushControl(
     //=============================
     // 3. 상태 레지스터
     //=============================
-    always @(posedge i_Clk or posedge i_Rst) begin
+    always @(posedge i_Clk or negedge i_Rst) begin
         if (i_Rst) begin
             r_State <= S_IDLE;
         end else begin
@@ -54,8 +54,8 @@ module PushControl(
     // 4. 타이머 동작
     //   S_WAIT일 때만 카운트, 나머지 상태에서는 0으로
     //=============================
-    always @(posedge i_Clk or posedge i_Rst) begin
-        if (i_Rst) begin
+    always @(posedge i_Clk or negedge i_Rst) begin
+        if (!i_Rst) begin
             r_Cnt <= 19'd0;
         end else begin
             case (r_State)

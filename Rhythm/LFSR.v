@@ -1,11 +1,11 @@
 module LFSR(i_Clk, i_Rst, o_Rand);
 
     input  wire       i_Clk;   
-    input  wire       i_Rst_n;    
+    input  wire       i_Rst;    
     
     // [7:4]: 노트 패턴 (어떤 레인에 나올지)
     // [3:0]: 생성 확률 (노트를 만들지 말지)
-    output wire [7:0] o_Rand  
+    output wire [7:0] o_Rand; 
 
     reg  [15:0] r_LFSR;     // 16비트 레지스터 (내부용)
     wire        w_Feedback;
