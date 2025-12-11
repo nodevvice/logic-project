@@ -12,9 +12,9 @@ module One_PushControl(
     reg r_PushSync0;
     reg r_PushSync1;
 
-    parameter DEBOUNCE_MAX = 500_000  // 10ms @ 50MHz 기준
+    parameter DEBOUNCE_MAX = 500_000;  // 10ms @ 50MHz 기준
 
-    always @(posedge i_Clk or posedge i_Rst) begin
+    always @(posedge i_Clk or negedge i_Rst) begin
         if (!i_Rst) begin
             r_PushSync0 <= 1'b0;
             r_PushSync1 <= 1'b0;
@@ -43,7 +43,7 @@ module One_PushControl(
     // 3. 상태 레지스터
     //=============================
     always @(posedge i_Clk or negedge i_Rst) begin
-        if (i_Rst) begin
+        if (!i_Rst) begin
             r_State <= S_IDLE;
         end else begin
             r_State <= r_NextState;

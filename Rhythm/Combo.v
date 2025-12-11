@@ -9,8 +9,8 @@ module ComboCounter (
 
     localparam [6:0] MAX_COMBO = 7'd99;
 
-    always @(posedge i_Clk or posedge i_Rst) begin
-        if (i_Rst) begin
+    always @(posedge i_Clk or negedge i_Rst) begin
+        if (!i_Rst) begin
             o_Combo <= 7'd0;
         end else begin
             // Miss가 들어오면 콤보 바로 0
