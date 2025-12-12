@@ -1,4 +1,4 @@
-module Push_Control (
+module PushControl (
     input  wire       i_Clk,
     input  wire       i_Rst,
     input  wire [3:0] i_Push,    // 4비트 입력

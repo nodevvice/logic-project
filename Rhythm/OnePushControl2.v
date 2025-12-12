@@ -12,7 +12,7 @@ module OnePushControl(
     // DE1-SoC 버튼은 누르면 0이므로, 내부 로직을 편하게 하기 위해 반전(~) 시킴
     wire w_PushActiveHigh = ~i_Push; 
 
-    parameter DEBOUNCE_MAX = 500_000
+    parameter DEBOUNCE_MAX = 500_000;
 
     reg r_PushSync0;
     reg r_PushSync1;

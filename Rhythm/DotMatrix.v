@@ -11,7 +11,10 @@ module DotMatrix(i_Clk, i_Rst, i_Data, o_DM_Col, o_DM_Row, o_fDone);
 
  assign o_fDone = c_Row[7] && f2ms;
  assign o_DM_Row = c_Row;
- assign o_DM_Col =
+
+ 
+wire [7:0] w_Col_Data;
+assign w_Col_Data =
     (c_Row[7] ? i_Data[8*7+:8] : 0) |
     (c_Row[6] ? i_Data[8*6+:8] : 0) |
     (c_Row[5] ? i_Data[8*5+:8] : 0) |
@@ -20,6 +23,9 @@ module DotMatrix(i_Clk, i_Rst, i_Data, o_DM_Col, o_DM_Row, o_fDone);
     (c_Row[2] ? i_Data[8*2+:8] : 0) |
     (c_Row[1] ? i_Data[8*1+:8] : 0) |
     (c_Row[0] ? i_Data[8*0+:8] : 0);
+
+assign o_DM_Col = ~w_Col_Data; 
+
 
  assign f2ms = c_Cnt== 100000 -1;
  

@@ -1,0 +1,30 @@
+
+State Machine - |RhythmGame_Top|GameLogic:u_GameCore|r_State
+Name r_State.S_IDLE r_State.S_GAMEOVER r_State.S_PLAY 
+r_State.S_IDLE 0 0 0 
+r_State.S_PLAY 1 0 1 
+r_State.S_GAMEOVER 1 1 0 
+
+State Machine - |RhythmGame_Top|PushControl:u_Input|OnePushControl:u_Btn3|r_State
+Name r_State.S_IDLE r_State.S_WAIT r_State.S_PULSE 
+r_State.S_IDLE 0 0 0 
+r_State.S_PULSE 1 0 1 
+r_State.S_WAIT 1 1 0 
+
+State Machine - |RhythmGame_Top|PushControl:u_Input|OnePushControl:u_Btn2|r_State
+Name r_State.S_IDLE r_State.S_WAIT r_State.S_PULSE 
+r_State.S_IDLE 0 0 0 
+r_State.S_PULSE 1 0 1 
+r_State.S_WAIT 1 1 0 
+
+State Machine - |RhythmGame_Top|PushControl:u_Input|OnePushControl:u_Btn1|r_State
+Name r_State.S_IDLE r_State.S_WAIT r_State.S_PULSE 
+r_State.S_IDLE 0 0 0 
+r_State.S_PULSE 1 0 1 
+r_State.S_WAIT 1 1 0 
+
+State Machine - |RhythmGame_Top|PushControl:u_Input|OnePushControl:u_Btn0|r_State
+Name r_State.S_IDLE r_State.S_WAIT r_State.S_PULSE 
+r_State.S_IDLE 0 0 0 
+r_State.S_PULSE 1 0 1 
+r_State.S_WAIT 1 1 0 
