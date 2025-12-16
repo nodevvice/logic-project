@@ -1,5 +1,5 @@
 Flow report for RhythmGame_Top
-Fri Dec 12 13:07:49 2025
+Tue Dec 16 16:41:11 2025
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -40,7 +40,7 @@ applicable agreement for further details.
 +------------------------------------------------------------------------------+
 ; Flow Summary                                                                 ;
 +---------------------------------+--------------------------------------------+
-; Flow Status                     ; Successful - Fri Dec 12 13:07:49 2025      ;
+; Flow Status                     ; Successful - Tue Dec 16 16:41:11 2025      ;
 ; Quartus II 64-Bit Version       ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
 ; Revision Name                   ; RhythmGame_Top                             ;
 ; Top-level Entity Name           ; RhythmGame_Top                             ;
@@ -48,7 +48,7 @@ applicable agreement for further details.
 ; Device                          ; 5CSEMA5F31C6                               ;
 ; Timing Models                   ; Preliminary                                ;
 ; Logic utilization (in ALMs)     ; 850 / 32,070 ( 3 % )                       ;
-; Total registers                 ; 331                                        ;
+; Total registers                 ; 333                                        ;
 ; Total pins                      ; 84 / 457 ( 18 % )                          ;
 ; Total virtual pins              ; 0                                          ;
 ; Total block memory bits         ; 0 / 4,065,280 ( 0 % )                      ;
@@ -67,7 +67,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 12/12/2025 13:06:55 ;
+; Start date & time ; 12/16/2025 16:39:41 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; RhythmGame_Top      ;
 +-------------------+---------------------+
@@ -78,7 +78,7 @@ applicable agreement for further details.
 +-------------------------------------+---------------------------------+---------------+-------------+----------------+
 ; Assignment Name                     ; Value                           ; Default Value ; Entity Name ; Section Id     ;
 +-------------------------------------+---------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 110289777982734.176551241519404 ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID               ; 110289777982734.176587078126724 ; --            ; --          ; --             ;
 ; EDA_OUTPUT_DATA_FORMAT              ; Verilog Hdl                     ; --            ; --          ; eda_simulation ;
 ; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (Verilog)       ; <None>        ; --          ; --             ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                              ; --            ; --          ; --             ;
@@ -95,12 +95,12 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:02     ; 1.0                     ; 4715 MB             ; 00:00:02                           ;
-; Fitter                    ; 00:00:33     ; 1.0                     ; 5697 MB             ; 00:00:32                           ;
-; Assembler                 ; 00:00:07     ; 1.0                     ; 4783 MB             ; 00:00:07                           ;
-; TimeQuest Timing Analyzer ; 00:00:07     ; 1.0                     ; 4971 MB             ; 00:00:07                           ;
-; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 4662 MB             ; 00:00:01                           ;
-; Total                     ; 00:00:50     ; --                      ; --                  ; 00:00:49                           ;
+; Analysis & Synthesis      ; 00:00:04     ; 1.0                     ; 4707 MB             ; 00:00:04                           ;
+; Fitter                    ; 00:00:55     ; 1.0                     ; 5687 MB             ; 00:00:54                           ;
+; Assembler                 ; 00:00:11     ; 1.0                     ; 4776 MB             ; 00:00:11                           ;
+; TimeQuest Timing Analyzer ; 00:00:11     ; 1.0                     ; 4982 MB             ; 00:00:11                           ;
+; EDA Netlist Writer        ; 00:00:02     ; 1.0                     ; 4665 MB             ; 00:00:02                           ;
+; Total                     ; 00:01:23     ; --                      ; --                  ; 00:01:22                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

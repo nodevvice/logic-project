@@ -109,7 +109,7 @@ module GameLogic (
                         // (2) 버튼 입력 판정 (v_Map_Temp를 수정)
                         
                         // Lane 0
-                        if (i_Pulse[0]) begin
+                        if (i_Pulse[3]) begin
                             if (v_Map_Temp[1:0] != 2'b00) begin // 노트가 있으면
                                 // 판정 로직 (타이밍)
                                 if (r_Speed_Cnt > (r_Speed_Max >> 2) && r_Speed_Cnt < (r_Speed_Max - (r_Speed_Max >> 2))) begin
@@ -129,7 +129,7 @@ module GameLogic (
                         end
 
                         // Lane 1
-                        if (i_Pulse[1]) begin
+                        if (i_Pulse[2]) begin
                             if (v_Map_Temp[3:2] != 2'b00) begin
                                 if (r_Speed_Cnt > (r_Speed_Max >> 2) && r_Speed_Cnt < (r_Speed_Max - (r_Speed_Max >> 2))) begin
                                     r_Score <= r_Score + 10; o_Sound_Cmd <= 2'd1;
@@ -145,7 +145,7 @@ module GameLogic (
                         end
 
                         // Lane 2
-                        if (i_Pulse[2]) begin
+                        if (i_Pulse[1]) begin
                             if (v_Map_Temp[5:4] != 2'b00) begin
                                 if (r_Speed_Cnt > (r_Speed_Max >> 2) && r_Speed_Cnt < (r_Speed_Max - (r_Speed_Max >> 2))) begin
                                     r_Score <= r_Score + 10; o_Sound_Cmd <= 2'd1;
@@ -161,7 +161,7 @@ module GameLogic (
                         end
 
                         // Lane 3
-                        if (i_Pulse[3]) begin
+                        if (i_Pulse[0]) begin
                             if (v_Map_Temp[7:6] != 2'b00) begin
                                 if (r_Speed_Cnt > (r_Speed_Max >> 2) && r_Speed_Cnt < (r_Speed_Max - (r_Speed_Max >> 2))) begin
                                     r_Score <= r_Score + 10; o_Sound_Cmd <= 2'd1;
