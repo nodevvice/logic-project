@@ -81,6 +81,8 @@ module RhythmGame_Top (
 
     // [5] UI (7-Segment & Sound)
     UI u_UI (
+        .i_Clk       (CLOCK_50),
+        .i_Rst_n     (w_Rst_n),
         .i_Score     (w_Score),
         .i_Combo     (w_Combo),
         .i_Sound_Cmd (w_Sound_Cmd),
