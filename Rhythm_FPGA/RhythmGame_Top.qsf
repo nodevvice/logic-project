@@ -42,14 +42,6 @@ set_global_assignment -name TOP_LEVEL_ENTITY RhythmGame_Top
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 13.1
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "12:28:30  DECEMBER 12, 2025"
 set_global_assignment -name LAST_QUARTUS_VERSION 13.1
-set_global_assignment -name VERILOG_FILE ../Rhythm/UI.v
-set_global_assignment -name VERILOG_FILE ../Rhythm/RhythmGame_Top.v
-set_global_assignment -name VERILOG_FILE ../Rhythm/PushControl.v
-set_global_assignment -name VERILOG_FILE ../Rhythm/OnePushControl2.v
-set_global_assignment -name VERILOG_FILE ../Rhythm/LFSR.v
-set_global_assignment -name VERILOG_FILE ../Rhythm/GameLogic.v
-set_global_assignment -name VERILOG_FILE ../Rhythm/FND.v
-set_global_assignment -name VERILOG_FILE ../Rhythm/DotMatrix.v
 set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
 set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
 set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
@@ -60,6 +52,7 @@ set_global_assignment -name EDA_OUTPUT_DATA_FORMAT "VERILOG HDL" -section_id eda
 
 
 set_location_assignment PIN_AF14 -to CLOCK_50
+set_location_assignment PIN_AA21 -to o_Piezo
 
 
 
@@ -138,11 +131,7 @@ set_location_assignment PIN_AB26 -to HEX5[4]
 set_location_assignment PIN_AA26 -to HEX5[5]
 set_location_assignment PIN_AA25 -to HEX5[6]
 
-#============================================================
-# [회전 수정] Row와 Col의 핀 묶음을 서로 맞바꿈
-#============================================================
 
-# 기존 Col 핀들을 Row(행 선택)로 할당
 set_location_assignment PIN_AJ26 -to o_DM_Row[7]
 set_location_assignment PIN_AG17 -to o_DM_Row[6]
 set_location_assignment PIN_AA19 -to o_DM_Row[5]
@@ -162,26 +151,21 @@ set_location_assignment PIN_AK21 -to o_DM_Col[2]
 set_location_assignment PIN_AE16 -to o_DM_Col[1]
 set_location_assignment PIN_AC20 -to o_DM_Col[0]
 
-# set_location_assignment PIN_AH23 -to o_DM_Row[0]
-# set_location_assignment PIN_AK28 -to o_DM_Row[1]
-# set_location_assignment PIN_AD20 -to o_DM_Row[2]
-# set_location_assignment PIN_AH25 -to o_DM_Row[3]
-# set_location_assignment PIN_AH17 -to o_DM_Row[4]
-# set_location_assignment PIN_AK21 -to o_DM_Row[5]
-# set_location_assignment PIN_AE16 -to o_DM_Row[6]
-# set_location_assignment PIN_AC20 -to o_DM_Row[7]
 
-# set_location_assignment PIN_AJ26 -to o_DM_Col[0]
-# set_location_assignment PIN_AG17 -to o_DM_Col[1]
-# set_location_assignment PIN_AA19 -to o_DM_Col[2]
-# set_location_assignment PIN_AG23 -to o_DM_Col[3]
-# set_location_assignment PIN_AJ20 -to o_DM_Col[4]
-# set_location_assignment PIN_AJ24 -to o_DM_Col[5]
-# set_location_assignment PIN_AJ27 -to o_DM_Col[6]
-# set_location_assignment PIN_AH24 -to o_DM_Col[7]
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name VERILOG_FILE ../Rhythm/Sound.v
+set_global_assignment -name VERILOG_FILE ../Rhythm/UI.v
+set_global_assignment -name VERILOG_FILE ../Rhythm/RhythmGame_Top.v
+set_global_assignment -name VERILOG_FILE ../Rhythm/PushControl.v
+set_global_assignment -name VERILOG_FILE ../Rhythm/OnePushControl2.v
+set_global_assignment -name VERILOG_FILE ../Rhythm/LFSR.v
+set_global_assignment -name VERILOG_FILE ../Rhythm/GameLogic.v
+set_global_assignment -name VERILOG_FILE ../Rhythm/FND.v
+set_global_assignment -name VERILOG_FILE ../Rhythm/DotMatrix.v
 set_global_assignment -name CDF_FILE output_files/Chain1.cdf
 set_global_assignment -name CDF_FILE output_files/Chain2.cdf
+set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
+set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

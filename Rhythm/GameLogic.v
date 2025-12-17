@@ -112,15 +112,14 @@ module GameLogic (
                         if (i_Pulse[3]) begin
                             if (v_Map_Temp[1:0] != 2'b00) begin // 노트가 있으면
                                 // 판정 로직 (타이밍)
-                                if (r_Speed_Cnt > (r_Speed_Max >> 2) && r_Speed_Cnt < (r_Speed_Max - (r_Speed_Max >> 2))) begin
+                                if (r_Speed_Cnt > (r_Speed_Max >> 3) && r_Speed_Cnt < (r_Speed_Max >> 1)) begin
                                     r_Score <= r_Score + 10; o_Sound_Cmd <= 2'd1; // Perfect
                                 end else begin
                                     r_Score <= r_Score + 5;  o_Sound_Cmd <= 2'd2; // Good
                                 end
-                                r_Combo <= r_Combo + 1;
-
-                                if (r_Combo + 1 > r_HighCombo) begin
-                                    r_HighCombo <= r_Combo + 1;
+                                // 현재 콤보가 99 미만일 때만 1을 더한다 (즉, 99가 되면 더 이상 안 오름)
+                                if (r_Combo < 8'd99) begin
+                                    r_Combo <= r_Combo + 1;
                                 end
                                 v_Map_Temp[1:0] = 2'b00; // [중요] 임시 변수에서 삭제
                                 
@@ -135,12 +134,14 @@ module GameLogic (
                         // Lane 1
                         if (i_Pulse[2]) begin
                             if (v_Map_Temp[3:2] != 2'b00) begin
-                                if (r_Speed_Cnt > (r_Speed_Max >> 2) && r_Speed_Cnt < (r_Speed_Max - (r_Speed_Max >> 2))) begin
+                                if (r_Speed_Cnt > (r_Speed_Max >> 3) && r_Speed_Cnt < (r_Speed_Max >> 1)) begin
                                     r_Score <= r_Score + 10; o_Sound_Cmd <= 2'd1;
                                 end else begin
                                     r_Score <= r_Score + 5;  o_Sound_Cmd <= 2'd2;
                                 end
-                                r_Combo <= r_Combo + 1;
+                                if (r_Combo < 8'd99) begin
+                                    r_Combo <= r_Combo + 1;
+                                end
                                 v_Map_Temp[3:2] = 2'b00;
                                 if (r_Speed_Max > SPEED_LIMIT) r_Speed_Max <= r_Speed_Max - SPEED_STEP;
                             end else begin
@@ -151,12 +152,14 @@ module GameLogic (
                         // Lane 2
                         if (i_Pulse[1]) begin
                             if (v_Map_Temp[5:4] != 2'b00) begin
-                                if (r_Speed_Cnt > (r_Speed_Max >> 2) && r_Speed_Cnt < (r_Speed_Max - (r_Speed_Max >> 2))) begin
+                                if (r_Speed_Cnt > (r_Speed_Max >> 3) && r_Speed_Cnt < (r_Speed_Max >> 1)) begin
                                     r_Score <= r_Score + 10; o_Sound_Cmd <= 2'd1;
                                 end else begin
                                     r_Score <= r_Score + 5;  o_Sound_Cmd <= 2'd2;
                                 end
-                                r_Combo <= r_Combo + 1;
+                                if (r_Combo < 8'd99) begin
+                                    r_Combo <= r_Combo + 1;
+                                end
                                 v_Map_Temp[5:4] = 2'b00;
                                 if (r_Speed_Max > SPEED_LIMIT) r_Speed_Max <= r_Speed_Max - SPEED_STEP;
                             end else begin
@@ -167,12 +170,14 @@ module GameLogic (
                         // Lane 3
                         if (i_Pulse[0]) begin
                             if (v_Map_Temp[7:6] != 2'b00) begin
-                                if (r_Speed_Cnt > (r_Speed_Max >> 2) && r_Speed_Cnt < (r_Speed_Max - (r_Speed_Max >> 2))) begin
+                                if (r_Speed_Cnt > (r_Speed_Max >> 3) && r_Speed_Cnt < (r_Speed_Max >> 1)) begin
                                     r_Score <= r_Score + 10; o_Sound_Cmd <= 2'd1;
                                 end else begin
                                     r_Score <= r_Score + 5;  o_Sound_Cmd <= 2'd2;
                                 end
-                                r_Combo <= r_Combo + 1;
+                                if (r_Combo < 8'd99) begin
+                                    r_Combo <= r_Combo + 1;
+                                end
                                 v_Map_Temp[7:6] = 2'b00;
                                 if (r_Speed_Max > SPEED_LIMIT) r_Speed_Max <= r_Speed_Max - SPEED_STEP;
                             end else begin
@@ -207,6 +212,9 @@ module GameLogic (
                             // [중요] v_Map_Temp(버튼 처리된 맵)를 Shift 해서 r_Map에 저장
                             r_Map <= {v_New_Row, v_Map_Temp[63:8]};
                         end
+                    end
+                    if (r_Combo > r_HighCombo) begin
+                        r_HighCombo <= r_Combo;
                     end
                 end
 

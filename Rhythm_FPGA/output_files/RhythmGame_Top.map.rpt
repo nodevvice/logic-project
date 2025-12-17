@@ -1,5 +1,5 @@
 Analysis & Synthesis report for RhythmGame_Top
-Tue Dec 16 16:39:45 2025
+Thu Dec 18 02:50:48 2025
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -65,13 +65,13 @@ applicable agreement for further details.
 +------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                 ;
 +---------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Tue Dec 16 16:39:45 2025      ;
+; Analysis & Synthesis Status     ; Successful - Thu Dec 18 02:50:48 2025      ;
 ; Quartus II 64-Bit Version       ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
 ; Revision Name                   ; RhythmGame_Top                             ;
 ; Top-level Entity Name           ; RhythmGame_Top                             ;
 ; Family                          ; Cyclone V                                  ;
 ; Logic utilization (in ALMs)     ; N/A                                        ;
-; Total registers                 ; 314                                        ;
+; Total registers                 ; 385                                        ;
 ; Total pins                      ; 84                                         ;
 ; Total virtual pins              ; 0                                          ;
 ; Total block memory bits         ; 0                                          ;
@@ -188,6 +188,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------+---------+
 ; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                             ; Library ;
 +----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------+---------+
+; ../Rhythm/Sound.v                ; yes             ; User Verilog HDL File        ; C:/Work/PilJoo/.git/logic-project/Rhythm/Sound.v                         ;         ;
 ; ../Rhythm/UI.v                   ; yes             ; User Verilog HDL File        ; C:/Work/PilJoo/.git/logic-project/Rhythm/UI.v                            ;         ;
 ; ../Rhythm/RhythmGame_Top.v       ; yes             ; User Verilog HDL File        ; C:/Work/PilJoo/.git/logic-project/Rhythm/RhythmGame_Top.v                ;         ;
 ; ../Rhythm/PushControl.v          ; yes             ; User Verilog HDL File        ; C:/Work/PilJoo/.git/logic-project/Rhythm/PushControl.v                   ;         ;
@@ -222,23 +223,23 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+----------------+
 ; Resource                                    ; Usage          ;
 +---------------------------------------------+----------------+
-; Estimate of Logic utilization (ALMs needed) ; 847            ;
+; Estimate of Logic utilization (ALMs needed) ; 868            ;
 ;                                             ;                ;
-; Combinational ALUT usage for logic          ; 1613           ;
-;     -- 7 input functions                    ; 1              ;
-;     -- 6 input functions                    ; 73             ;
-;     -- 5 input functions                    ; 56             ;
-;     -- 4 input functions                    ; 220            ;
-;     -- <=3 input functions                  ; 1263           ;
+; Combinational ALUT usage for logic          ; 1669           ;
+;     -- 7 input functions                    ; 2              ;
+;     -- 6 input functions                    ; 57             ;
+;     -- 5 input functions                    ; 73             ;
+;     -- 4 input functions                    ; 231            ;
+;     -- <=3 input functions                  ; 1306           ;
 ;                                             ;                ;
-; Dedicated logic registers                   ; 314            ;
+; Dedicated logic registers                   ; 385            ;
 ;                                             ;                ;
 ; I/O pins                                    ; 84             ;
 ; Total DSP Blocks                            ; 0              ;
 ; Maximum fan-out node                        ; CLOCK_50~input ;
-; Maximum fan-out                             ; 314            ;
-; Total fan-out                               ; 6263           ;
-; Average fan-out                             ; 2.99           ;
+; Maximum fan-out                             ; 385            ;
+; Total fan-out                               ; 6725           ;
+; Average fan-out                             ; 3.03           ;
 +---------------------------------------------+----------------+
 
 
@@ -247,22 +248,23 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +-------------------------------------------+-------------------+--------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                ; LC Combinationals ; LC Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                     ; Library Name ;
 +-------------------------------------------+-------------------+--------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------------------------------------------------------+--------------+
-; |RhythmGame_Top                           ; 1613 (0)          ; 314 (0)      ; 0                 ; 0          ; 84   ; 0            ; |RhythmGame_Top                                                                                                         ; work         ;
+; |RhythmGame_Top                           ; 1669 (0)          ; 385 (0)      ; 0                 ; 0          ; 84   ; 0            ; |RhythmGame_Top                                                                                                         ; work         ;
 ;    |DotMatrix:u_Display|                  ; 39 (39)           ; 25 (25)      ; 0                 ; 0          ; 0    ; 0            ; |RhythmGame_Top|DotMatrix:u_Display                                                                                     ; work         ;
-;    |GameLogic:u_GameCore|                 ; 372 (372)         ; 177 (177)    ; 0                 ; 0          ; 0    ; 0            ; |RhythmGame_Top|GameLogic:u_GameCore                                                                                    ; work         ;
+;    |GameLogic:u_GameCore|                 ; 340 (340)         ; 187 (187)    ; 0                 ; 0          ; 0    ; 0            ; |RhythmGame_Top|GameLogic:u_GameCore                                                                                    ; work         ;
 ;    |LFSR:u_LFSR|                          ; 9 (9)             ; 16 (16)      ; 0                 ; 0          ; 0    ; 0            ; |RhythmGame_Top|LFSR:u_LFSR                                                                                             ; work         ;
 ;    |PushControl:u_Input|                  ; 112 (0)           ; 96 (0)       ; 0                 ; 0          ; 0    ; 0            ; |RhythmGame_Top|PushControl:u_Input                                                                                     ; work         ;
 ;       |OnePushControl:u_Btn0|             ; 28 (28)           ; 24 (24)      ; 0                 ; 0          ; 0    ; 0            ; |RhythmGame_Top|PushControl:u_Input|OnePushControl:u_Btn0                                                               ; work         ;
 ;       |OnePushControl:u_Btn1|             ; 28 (28)           ; 24 (24)      ; 0                 ; 0          ; 0    ; 0            ; |RhythmGame_Top|PushControl:u_Input|OnePushControl:u_Btn1                                                               ; work         ;
 ;       |OnePushControl:u_Btn2|             ; 28 (28)           ; 24 (24)      ; 0                 ; 0          ; 0    ; 0            ; |RhythmGame_Top|PushControl:u_Input|OnePushControl:u_Btn2                                                               ; work         ;
 ;       |OnePushControl:u_Btn3|             ; 28 (28)           ; 24 (24)      ; 0                 ; 0          ; 0    ; 0            ; |RhythmGame_Top|PushControl:u_Input|OnePushControl:u_Btn3                                                               ; work         ;
-;    |UI:u_UI|                              ; 1081 (0)          ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |RhythmGame_Top|UI:u_UI                                                                                                 ; work         ;
+;    |UI:u_UI|                              ; 1169 (0)          ; 61 (0)       ; 0                 ; 0          ; 0    ; 0            ; |RhythmGame_Top|UI:u_UI                                                                                                 ; work         ;
 ;       |FND:u_Combo_0|                     ; 7 (7)             ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |RhythmGame_Top|UI:u_UI|FND:u_Combo_0                                                                                   ; work         ;
 ;       |FND:u_Combo_1|                     ; 7 (7)             ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |RhythmGame_Top|UI:u_UI|FND:u_Combo_1                                                                                   ; work         ;
 ;       |FND:u_Score_0|                     ; 7 (7)             ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |RhythmGame_Top|UI:u_UI|FND:u_Score_0                                                                                   ; work         ;
 ;       |FND:u_Score_1|                     ; 7 (7)             ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |RhythmGame_Top|UI:u_UI|FND:u_Score_1                                                                                   ; work         ;
 ;       |FND:u_Score_2|                     ; 7 (7)             ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |RhythmGame_Top|UI:u_UI|FND:u_Score_2                                                                                   ; work         ;
 ;       |FND:u_Score_3|                     ; 7 (7)             ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |RhythmGame_Top|UI:u_UI|FND:u_Score_3                                                                                   ; work         ;
+;       |Sound:u_Sound|                     ; 86 (86)           ; 61 (61)      ; 0                 ; 0          ; 0    ; 0            ; |RhythmGame_Top|UI:u_UI|Sound:u_Sound                                                                                   ; work         ;
 ;       |lpm_divide:Div0|                   ; 138 (0)           ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |RhythmGame_Top|UI:u_UI|lpm_divide:Div0                                                                                 ; work         ;
 ;          |lpm_divide_kbm:auto_generated|  ; 138 (0)           ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |RhythmGame_Top|UI:u_UI|lpm_divide:Div0|lpm_divide_kbm:auto_generated                                                   ; work         ;
 ;             |sign_div_unsign_qlh:divider| ; 138 (0)           ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |RhythmGame_Top|UI:u_UI|lpm_divide:Div0|lpm_divide_kbm:auto_generated|sign_div_unsign_qlh:divider                       ; work         ;
@@ -275,10 +277,10 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ;          |lpm_divide_1dm:auto_generated|  ; 165 (0)           ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |RhythmGame_Top|UI:u_UI|lpm_divide:Div2|lpm_divide_1dm:auto_generated                                                   ; work         ;
 ;             |sign_div_unsign_7nh:divider| ; 165 (0)           ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |RhythmGame_Top|UI:u_UI|lpm_divide:Div2|lpm_divide_1dm:auto_generated|sign_div_unsign_7nh:divider                       ; work         ;
 ;                |alt_u_div_k2f:divider|    ; 165 (165)         ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |RhythmGame_Top|UI:u_UI|lpm_divide:Div2|lpm_divide_1dm:auto_generated|sign_div_unsign_7nh:divider|alt_u_div_k2f:divider ; work         ;
-;       |lpm_divide:Div3|                   ; 49 (0)            ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |RhythmGame_Top|UI:u_UI|lpm_divide:Div3                                                                                 ; work         ;
-;          |lpm_divide_5am:auto_generated|  ; 49 (0)            ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |RhythmGame_Top|UI:u_UI|lpm_divide:Div3|lpm_divide_5am:auto_generated                                                   ; work         ;
-;             |sign_div_unsign_bkh:divider| ; 49 (0)            ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |RhythmGame_Top|UI:u_UI|lpm_divide:Div3|lpm_divide_5am:auto_generated|sign_div_unsign_bkh:divider                       ; work         ;
-;                |alt_u_div_sse:divider|    ; 49 (49)           ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |RhythmGame_Top|UI:u_UI|lpm_divide:Div3|lpm_divide_5am:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_sse:divider ; work         ;
+;       |lpm_divide:Div3|                   ; 50 (0)            ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |RhythmGame_Top|UI:u_UI|lpm_divide:Div3                                                                                 ; work         ;
+;          |lpm_divide_5am:auto_generated|  ; 50 (0)            ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |RhythmGame_Top|UI:u_UI|lpm_divide:Div3|lpm_divide_5am:auto_generated                                                   ; work         ;
+;             |sign_div_unsign_bkh:divider| ; 50 (0)            ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |RhythmGame_Top|UI:u_UI|lpm_divide:Div3|lpm_divide_5am:auto_generated|sign_div_unsign_bkh:divider                       ; work         ;
+;                |alt_u_div_sse:divider|    ; 50 (50)           ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |RhythmGame_Top|UI:u_UI|lpm_divide:Div3|lpm_divide_5am:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_sse:divider ; work         ;
 ;       |lpm_divide:Mod0|                   ; 142 (0)           ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |RhythmGame_Top|UI:u_UI|lpm_divide:Mod0                                                                                 ; work         ;
 ;          |lpm_divide_n3m:auto_generated|  ; 142 (0)           ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |RhythmGame_Top|UI:u_UI|lpm_divide:Mod0|lpm_divide_n3m:auto_generated                                                   ; work         ;
 ;             |sign_div_unsign_qlh:divider| ; 142 (0)           ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |RhythmGame_Top|UI:u_UI|lpm_divide:Mod0|lpm_divide_n3m:auto_generated|sign_div_unsign_qlh:divider                       ; work         ;
@@ -295,10 +297,10 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ;          |lpm_divide_n3m:auto_generated|  ; 60 (0)            ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |RhythmGame_Top|UI:u_UI|lpm_divide:Mod3|lpm_divide_n3m:auto_generated                                                   ; work         ;
 ;             |sign_div_unsign_qlh:divider| ; 60 (0)            ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |RhythmGame_Top|UI:u_UI|lpm_divide:Mod3|lpm_divide_n3m:auto_generated|sign_div_unsign_qlh:divider                       ; work         ;
 ;                |alt_u_div_qve:divider|    ; 60 (60)           ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |RhythmGame_Top|UI:u_UI|lpm_divide:Mod3|lpm_divide_n3m:auto_generated|sign_div_unsign_qlh:divider|alt_u_div_qve:divider ; work         ;
-;       |lpm_divide:Mod4|                   ; 53 (0)            ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |RhythmGame_Top|UI:u_UI|lpm_divide:Mod4                                                                                 ; work         ;
-;          |lpm_divide_82m:auto_generated|  ; 53 (0)            ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |RhythmGame_Top|UI:u_UI|lpm_divide:Mod4|lpm_divide_82m:auto_generated                                                   ; work         ;
-;             |sign_div_unsign_bkh:divider| ; 53 (0)            ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |RhythmGame_Top|UI:u_UI|lpm_divide:Mod4|lpm_divide_82m:auto_generated|sign_div_unsign_bkh:divider                       ; work         ;
-;                |alt_u_div_sse:divider|    ; 53 (53)           ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |RhythmGame_Top|UI:u_UI|lpm_divide:Mod4|lpm_divide_82m:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_sse:divider ; work         ;
+;       |lpm_divide:Mod4|                   ; 54 (0)            ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |RhythmGame_Top|UI:u_UI|lpm_divide:Mod4                                                                                 ; work         ;
+;          |lpm_divide_82m:auto_generated|  ; 54 (0)            ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |RhythmGame_Top|UI:u_UI|lpm_divide:Mod4|lpm_divide_82m:auto_generated                                                   ; work         ;
+;             |sign_div_unsign_bkh:divider| ; 54 (0)            ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |RhythmGame_Top|UI:u_UI|lpm_divide:Mod4|lpm_divide_82m:auto_generated|sign_div_unsign_bkh:divider                       ; work         ;
+;                |alt_u_div_sse:divider|    ; 54 (54)           ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |RhythmGame_Top|UI:u_UI|lpm_divide:Mod4|lpm_divide_82m:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_sse:divider ; work         ;
 ;       |lpm_divide:Mod5|                   ; 38 (0)            ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |RhythmGame_Top|UI:u_UI|lpm_divide:Mod5                                                                                 ; work         ;
 ;          |lpm_divide_82m:auto_generated|  ; 38 (0)            ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |RhythmGame_Top|UI:u_UI|lpm_divide:Mod5|lpm_divide_82m:auto_generated                                                   ; work         ;
 ;             |sign_div_unsign_bkh:divider| ; 38 (0)            ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |RhythmGame_Top|UI:u_UI|lpm_divide:Mod5|lpm_divide_82m:auto_generated|sign_div_unsign_bkh:divider                       ; work         ;
@@ -367,46 +369,60 @@ Encoding Type:  One-Hot
 +-----------------+----------------+----------------+-------------------------------+
 
 
-+-------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                  ;
-+----------------------------------------+--------------------------------------------+
-; Register name                          ; Reason for Removal                         ;
-+----------------------------------------+--------------------------------------------+
-; GameLogic:u_GameCore|r_Speed_Max[0..3] ; Stuck at GND due to stuck port data_in     ;
-; GameLogic:u_GameCore|r_Map[57]         ; Merged with GameLogic:u_GameCore|r_Map[56] ;
-; GameLogic:u_GameCore|r_Map[49]         ; Merged with GameLogic:u_GameCore|r_Map[48] ;
-; GameLogic:u_GameCore|r_Map[41]         ; Merged with GameLogic:u_GameCore|r_Map[40] ;
-; GameLogic:u_GameCore|r_Map[33]         ; Merged with GameLogic:u_GameCore|r_Map[32] ;
-; GameLogic:u_GameCore|r_Map[25]         ; Merged with GameLogic:u_GameCore|r_Map[24] ;
-; GameLogic:u_GameCore|r_Map[1]          ; Merged with GameLogic:u_GameCore|r_Map[0]  ;
-; GameLogic:u_GameCore|r_Map[59]         ; Merged with GameLogic:u_GameCore|r_Map[58] ;
-; GameLogic:u_GameCore|r_Map[51]         ; Merged with GameLogic:u_GameCore|r_Map[50] ;
-; GameLogic:u_GameCore|r_Map[43]         ; Merged with GameLogic:u_GameCore|r_Map[42] ;
-; GameLogic:u_GameCore|r_Map[35]         ; Merged with GameLogic:u_GameCore|r_Map[34] ;
-; GameLogic:u_GameCore|r_Map[3]          ; Merged with GameLogic:u_GameCore|r_Map[2]  ;
-; GameLogic:u_GameCore|r_Map[61]         ; Merged with GameLogic:u_GameCore|r_Map[60] ;
-; GameLogic:u_GameCore|r_Map[53]         ; Merged with GameLogic:u_GameCore|r_Map[52] ;
-; GameLogic:u_GameCore|r_Map[45]         ; Merged with GameLogic:u_GameCore|r_Map[44] ;
-; GameLogic:u_GameCore|r_Map[37]         ; Merged with GameLogic:u_GameCore|r_Map[36] ;
-; GameLogic:u_GameCore|r_Map[5]          ; Merged with GameLogic:u_GameCore|r_Map[4]  ;
-; GameLogic:u_GameCore|r_Map[63]         ; Merged with GameLogic:u_GameCore|r_Map[62] ;
-; GameLogic:u_GameCore|r_Map[55]         ; Merged with GameLogic:u_GameCore|r_Map[54] ;
-; GameLogic:u_GameCore|r_Map[47]         ; Merged with GameLogic:u_GameCore|r_Map[46] ;
-; GameLogic:u_GameCore|r_Map[39]         ; Merged with GameLogic:u_GameCore|r_Map[38] ;
-; GameLogic:u_GameCore|r_Map[7]          ; Merged with GameLogic:u_GameCore|r_Map[6]  ;
-; GameLogic:u_GameCore|r_Map[17]         ; Merged with GameLogic:u_GameCore|r_Map[16] ;
-; GameLogic:u_GameCore|r_Map[27]         ; Merged with GameLogic:u_GameCore|r_Map[26] ;
-; GameLogic:u_GameCore|r_Map[29]         ; Merged with GameLogic:u_GameCore|r_Map[28] ;
-; GameLogic:u_GameCore|r_Map[31]         ; Merged with GameLogic:u_GameCore|r_Map[30] ;
-; GameLogic:u_GameCore|r_Map[9]          ; Merged with GameLogic:u_GameCore|r_Map[8]  ;
-; GameLogic:u_GameCore|r_Map[19]         ; Merged with GameLogic:u_GameCore|r_Map[18] ;
-; GameLogic:u_GameCore|r_Map[21]         ; Merged with GameLogic:u_GameCore|r_Map[20] ;
-; GameLogic:u_GameCore|r_Map[23]         ; Merged with GameLogic:u_GameCore|r_Map[22] ;
-; GameLogic:u_GameCore|r_Map[11]         ; Merged with GameLogic:u_GameCore|r_Map[10] ;
-; GameLogic:u_GameCore|r_Map[13]         ; Merged with GameLogic:u_GameCore|r_Map[12] ;
-; GameLogic:u_GameCore|r_Map[15]         ; Merged with GameLogic:u_GameCore|r_Map[14] ;
-; Total Number of Removed Registers = 36 ;                                            ;
-+----------------------------------------+--------------------------------------------+
++----------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                 ;
++-----------------------------------------------+----------------------------------------------------+
+; Register name                                 ; Reason for Removal                                 ;
++-----------------------------------------------+----------------------------------------------------+
+; UI:u_UI|Sound:u_Sound|r_dur_max[0..4,6,14,23] ; Stuck at GND due to stuck port data_in             ;
+; GameLogic:u_GameCore|r_Speed_Max[0..3]        ; Stuck at GND due to stuck port data_in             ;
+; UI:u_UI|Sound:u_Sound|r_dur_max[9]            ; Merged with UI:u_UI|Sound:u_Sound|r_current_cmd[1] ;
+; UI:u_UI|Sound:u_Sound|r_dur_max[17,19,20]     ; Merged with UI:u_UI|Sound:u_Sound|r_current_cmd[0] ;
+; UI:u_UI|Sound:u_Sound|r_dur_max[12]           ; Merged with UI:u_UI|Sound:u_Sound|r_dur_max[21]    ;
+; UI:u_UI|Sound:u_Sound|r_dur_max[5,13]         ; Merged with UI:u_UI|Sound:u_Sound|r_dur_max[18]    ;
+; UI:u_UI|Sound:u_Sound|r_dur_max[7,8,10]       ; Merged with UI:u_UI|Sound:u_Sound|r_dur_max[16]    ;
+; UI:u_UI|Sound:u_Sound|r_dur_max[11]           ; Merged with UI:u_UI|Sound:u_Sound|r_dur_max[15]    ;
+; GameLogic:u_GameCore|r_Map[57]                ; Merged with GameLogic:u_GameCore|r_Map[56]         ;
+; GameLogic:u_GameCore|r_Map[49]                ; Merged with GameLogic:u_GameCore|r_Map[48]         ;
+; GameLogic:u_GameCore|r_Map[41]                ; Merged with GameLogic:u_GameCore|r_Map[40]         ;
+; GameLogic:u_GameCore|r_Map[33]                ; Merged with GameLogic:u_GameCore|r_Map[32]         ;
+; GameLogic:u_GameCore|r_Map[25]                ; Merged with GameLogic:u_GameCore|r_Map[24]         ;
+; GameLogic:u_GameCore|r_Map[1]                 ; Merged with GameLogic:u_GameCore|r_Map[0]          ;
+; GameLogic:u_GameCore|r_Map[59]                ; Merged with GameLogic:u_GameCore|r_Map[58]         ;
+; GameLogic:u_GameCore|r_Map[51]                ; Merged with GameLogic:u_GameCore|r_Map[50]         ;
+; GameLogic:u_GameCore|r_Map[43]                ; Merged with GameLogic:u_GameCore|r_Map[42]         ;
+; GameLogic:u_GameCore|r_Map[35]                ; Merged with GameLogic:u_GameCore|r_Map[34]         ;
+; GameLogic:u_GameCore|r_Map[3]                 ; Merged with GameLogic:u_GameCore|r_Map[2]          ;
+; GameLogic:u_GameCore|r_Map[61]                ; Merged with GameLogic:u_GameCore|r_Map[60]         ;
+; GameLogic:u_GameCore|r_Map[53]                ; Merged with GameLogic:u_GameCore|r_Map[52]         ;
+; GameLogic:u_GameCore|r_Map[45]                ; Merged with GameLogic:u_GameCore|r_Map[44]         ;
+; GameLogic:u_GameCore|r_Map[37]                ; Merged with GameLogic:u_GameCore|r_Map[36]         ;
+; GameLogic:u_GameCore|r_Map[5]                 ; Merged with GameLogic:u_GameCore|r_Map[4]          ;
+; GameLogic:u_GameCore|r_Map[63]                ; Merged with GameLogic:u_GameCore|r_Map[62]         ;
+; GameLogic:u_GameCore|r_Map[55]                ; Merged with GameLogic:u_GameCore|r_Map[54]         ;
+; GameLogic:u_GameCore|r_Map[47]                ; Merged with GameLogic:u_GameCore|r_Map[46]         ;
+; GameLogic:u_GameCore|r_Map[39]                ; Merged with GameLogic:u_GameCore|r_Map[38]         ;
+; GameLogic:u_GameCore|r_Map[7]                 ; Merged with GameLogic:u_GameCore|r_Map[6]          ;
+; UI:u_UI|Sound:u_Sound|r_tone_max[17]          ; Merged with UI:u_UI|Sound:u_Sound|r_tone_max[16]   ;
+; UI:u_UI|Sound:u_Sound|r_tone_max[5]           ; Merged with UI:u_UI|Sound:u_Sound|r_tone_max[15]   ;
+; UI:u_UI|Sound:u_Sound|r_tone_max[2]           ; Merged with UI:u_UI|Sound:u_Sound|r_tone_max[14]   ;
+; UI:u_UI|Sound:u_Sound|r_tone_max[9]           ; Merged with UI:u_UI|Sound:u_Sound|r_tone_max[3]    ;
+; UI:u_UI|Sound:u_Sound|r_tone_max[8]           ; Merged with UI:u_UI|Sound:u_Sound|r_tone_max[1]    ;
+; UI:u_UI|Sound:u_Sound|r_tone_max[4,7]         ; Merged with UI:u_UI|Sound:u_Sound|r_tone_max[0]    ;
+; GameLogic:u_GameCore|r_Map[17]                ; Merged with GameLogic:u_GameCore|r_Map[16]         ;
+; GameLogic:u_GameCore|r_Map[27]                ; Merged with GameLogic:u_GameCore|r_Map[26]         ;
+; GameLogic:u_GameCore|r_Map[29]                ; Merged with GameLogic:u_GameCore|r_Map[28]         ;
+; GameLogic:u_GameCore|r_Map[31]                ; Merged with GameLogic:u_GameCore|r_Map[30]         ;
+; GameLogic:u_GameCore|r_Map[9]                 ; Merged with GameLogic:u_GameCore|r_Map[8]          ;
+; GameLogic:u_GameCore|r_Map[19]                ; Merged with GameLogic:u_GameCore|r_Map[18]         ;
+; GameLogic:u_GameCore|r_Map[21]                ; Merged with GameLogic:u_GameCore|r_Map[20]         ;
+; GameLogic:u_GameCore|r_Map[23]                ; Merged with GameLogic:u_GameCore|r_Map[22]         ;
+; GameLogic:u_GameCore|r_Map[11]                ; Merged with GameLogic:u_GameCore|r_Map[10]         ;
+; GameLogic:u_GameCore|r_Map[13]                ; Merged with GameLogic:u_GameCore|r_Map[12]         ;
+; GameLogic:u_GameCore|r_Map[15]                ; Merged with GameLogic:u_GameCore|r_Map[14]         ;
+; UI:u_UI|Sound:u_Sound|r_tone_max[16]          ; Stuck at GND due to stuck port data_in             ;
+; Total Number of Removed Registers = 63        ;                                                    ;
++-----------------------------------------------+----------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -414,12 +430,12 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 314   ;
-; Number of registers using Synchronous Clear  ; 208   ;
+; Total registers                              ; 385   ;
+; Number of registers using Synchronous Clear  ; 250   ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 266   ;
+; Number of registers using Asynchronous Clear ; 329   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 246   ;
+; Number of registers using Clock Enable       ; 313   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -441,17 +457,17 @@ Encoding Type:  One-Hot
 ; GameLogic:u_GameCore|r_HP[9]            ; 2       ;
 ; DotMatrix:u_Display|c_Row[0]            ; 6       ;
 ; GameLogic:u_GameCore|r_Speed_Max[24]    ; 7       ;
-; GameLogic:u_GameCore|r_Speed_Max[22]    ; 7       ;
-; GameLogic:u_GameCore|r_Speed_Max[21]    ; 6       ;
-; GameLogic:u_GameCore|r_Speed_Max[20]    ; 6       ;
+; GameLogic:u_GameCore|r_Speed_Max[22]    ; 5       ;
+; GameLogic:u_GameCore|r_Speed_Max[21]    ; 5       ;
+; GameLogic:u_GameCore|r_Speed_Max[20]    ; 5       ;
 ; GameLogic:u_GameCore|r_Speed_Max[19]    ; 7       ;
 ; GameLogic:u_GameCore|r_Speed_Max[18]    ; 6       ;
-; GameLogic:u_GameCore|r_Speed_Max[16]    ; 6       ;
+; GameLogic:u_GameCore|r_Speed_Max[16]    ; 5       ;
 ; GameLogic:u_GameCore|r_Speed_Max[14]    ; 7       ;
 ; GameLogic:u_GameCore|r_Speed_Max[13]    ; 6       ;
-; GameLogic:u_GameCore|r_Speed_Max[12]    ; 7       ;
-; GameLogic:u_GameCore|r_Speed_Max[11]    ; 6       ;
-; GameLogic:u_GameCore|r_Speed_Max[6]     ; 6       ;
+; GameLogic:u_GameCore|r_Speed_Max[12]    ; 5       ;
+; GameLogic:u_GameCore|r_Speed_Max[11]    ; 5       ;
+; GameLogic:u_GameCore|r_Speed_Max[6]     ; 5       ;
 ; LFSR:u_LFSR|r_LFSR[4]                   ; 2       ;
 ; LFSR:u_LFSR|r_LFSR[5]                   ; 2       ;
 ; LFSR:u_LFSR|r_LFSR[2]                   ; 1       ;
@@ -466,25 +482,30 @@ Encoding Type:  One-Hot
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                            ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------+
-; 3:1                ; 19 bits   ; 38 LEs        ; 0 LEs                ; 38 LEs                 ; Yes        ; |RhythmGame_Top|PushControl:u_Input|OnePushControl:u_Btn3|r_Cnt[10]   ;
-; 3:1                ; 19 bits   ; 38 LEs        ; 0 LEs                ; 38 LEs                 ; Yes        ; |RhythmGame_Top|PushControl:u_Input|OnePushControl:u_Btn2|r_Cnt[11]   ;
-; 3:1                ; 19 bits   ; 38 LEs        ; 0 LEs                ; 38 LEs                 ; Yes        ; |RhythmGame_Top|PushControl:u_Input|OnePushControl:u_Btn1|r_Cnt[7]    ;
-; 3:1                ; 19 bits   ; 38 LEs        ; 0 LEs                ; 38 LEs                 ; Yes        ; |RhythmGame_Top|PushControl:u_Input|OnePushControl:u_Btn0|r_Cnt[1]    ;
-; 5:1                ; 32 bits   ; 96 LEs        ; 0 LEs                ; 96 LEs                 ; Yes        ; |RhythmGame_Top|GameLogic:u_GameCore|r_Wait_Cnt[11]                   ;
-; 6:1                ; 24 bits   ; 96 LEs        ; 0 LEs                ; 96 LEs                 ; Yes        ; |RhythmGame_Top|GameLogic:u_GameCore|r_Map[40]                        ;
-; 6:1                ; 4 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |RhythmGame_Top|GameLogic:u_GameCore|r_Map[0]                         ;
-; 7:1                ; 4 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |RhythmGame_Top|GameLogic:u_GameCore|r_Map[58]                        ;
-; 8:1                ; 15 bits   ; 75 LEs        ; 15 LEs               ; 60 LEs                 ; Yes        ; |RhythmGame_Top|GameLogic:u_GameCore|r_Score[1]                       ;
-; 14:1               ; 8 bits    ; 72 LEs        ; 0 LEs                ; 72 LEs                 ; Yes        ; |RhythmGame_Top|GameLogic:u_GameCore|r_Combo[0]                       ;
-; 10:1               ; 6 bits    ; 36 LEs        ; 6 LEs                ; 30 LEs                 ; Yes        ; |RhythmGame_Top|GameLogic:u_GameCore|r_Speed_Max[5]                   ;
-; 11:1               ; 9 bits    ; 63 LEs        ; 9 LEs                ; 54 LEs                 ; Yes        ; |RhythmGame_Top|GameLogic:u_GameCore|r_HP[8]                          ;
-; 10:1               ; 5 bits    ; 30 LEs        ; 5 LEs                ; 25 LEs                 ; Yes        ; |RhythmGame_Top|GameLogic:u_GameCore|r_Speed_Max[11]                  ;
-; 10:1               ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |RhythmGame_Top|GameLogic:u_GameCore|r_Speed_Max[21]                  ;
+; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; Yes        ; |RhythmGame_Top|UI:u_UI|Sound:u_Sound|r_tone_max[6]                   ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |RhythmGame_Top|UI:u_UI|Sound:u_Sound|r_tone_max[14]                  ;
+; 3:1                ; 19 bits   ; 38 LEs        ; 0 LEs                ; 38 LEs                 ; Yes        ; |RhythmGame_Top|PushControl:u_Input|OnePushControl:u_Btn3|r_Cnt[13]   ;
+; 3:1                ; 19 bits   ; 38 LEs        ; 0 LEs                ; 38 LEs                 ; Yes        ; |RhythmGame_Top|PushControl:u_Input|OnePushControl:u_Btn2|r_Cnt[18]   ;
+; 3:1                ; 19 bits   ; 38 LEs        ; 0 LEs                ; 38 LEs                 ; Yes        ; |RhythmGame_Top|PushControl:u_Input|OnePushControl:u_Btn1|r_Cnt[1]    ;
+; 3:1                ; 19 bits   ; 38 LEs        ; 0 LEs                ; 38 LEs                 ; Yes        ; |RhythmGame_Top|PushControl:u_Input|OnePushControl:u_Btn0|r_Cnt[18]   ;
+; 4:1                ; 24 bits   ; 48 LEs        ; 0 LEs                ; 48 LEs                 ; Yes        ; |RhythmGame_Top|UI:u_UI|Sound:u_Sound|r_dur_cnt[15]                   ;
+; 5:1                ; 32 bits   ; 96 LEs        ; 0 LEs                ; 96 LEs                 ; Yes        ; |RhythmGame_Top|GameLogic:u_GameCore|r_Wait_Cnt[25]                   ;
+; 6:1                ; 18 bits   ; 72 LEs        ; 0 LEs                ; 72 LEs                 ; Yes        ; |RhythmGame_Top|UI:u_UI|Sound:u_Sound|r_tone_cnt[7]                   ;
+; 6:1                ; 24 bits   ; 96 LEs        ; 0 LEs                ; 96 LEs                 ; Yes        ; |RhythmGame_Top|GameLogic:u_GameCore|r_Map[34]                        ;
+; 6:1                ; 4 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |RhythmGame_Top|GameLogic:u_GameCore|r_Map[2]                         ;
+; 7:1                ; 4 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |RhythmGame_Top|GameLogic:u_GameCore|r_Map[56]                        ;
+; 12:1               ; 2 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |RhythmGame_Top|GameLogic:u_GameCore|o_Sound_Cmd[1]                   ;
+; 8:1                ; 15 bits   ; 75 LEs        ; 15 LEs               ; 60 LEs                 ; Yes        ; |RhythmGame_Top|GameLogic:u_GameCore|r_Score[5]                       ;
+; 10:1               ; 6 bits    ; 36 LEs        ; 6 LEs                ; 30 LEs                 ; Yes        ; |RhythmGame_Top|GameLogic:u_GameCore|r_Speed_Max[10]                  ;
+; 15:1               ; 8 bits    ; 80 LEs        ; 0 LEs                ; 80 LEs                 ; Yes        ; |RhythmGame_Top|GameLogic:u_GameCore|r_Combo[0]                       ;
+; 11:1               ; 9 bits    ; 63 LEs        ; 9 LEs                ; 54 LEs                 ; Yes        ; |RhythmGame_Top|GameLogic:u_GameCore|r_HP[6]                          ;
+; 10:1               ; 5 bits    ; 30 LEs        ; 5 LEs                ; 25 LEs                 ; Yes        ; |RhythmGame_Top|GameLogic:u_GameCore|r_Speed_Max[18]                  ;
+; 10:1               ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |RhythmGame_Top|GameLogic:u_GameCore|r_Speed_Max[13]                  ;
 ; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |RhythmGame_Top|PushControl:u_Input|OnePushControl:u_Btn3|r_NextState ;
 ; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |RhythmGame_Top|PushControl:u_Input|OnePushControl:u_Btn2|r_NextState ;
 ; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |RhythmGame_Top|PushControl:u_Input|OnePushControl:u_Btn1|r_NextState ;
 ; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |RhythmGame_Top|PushControl:u_Input|OnePushControl:u_Btn0|r_NextState ;
-; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; No         ; |RhythmGame_Top|GameLogic:u_GameCore|Selector126                      ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; No         ; |RhythmGame_Top|GameLogic:u_GameCore|Selector125                      ;
 ; 8:1                ; 9 bits    ; 45 LEs        ; 9 LEs                ; 36 LEs                 ; No         ; |RhythmGame_Top|GameLogic:u_GameCore|r_Speed_Max                      ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------+
 
@@ -783,9 +804,11 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
-    Info: Processing started: Tue Dec 16 16:39:41 2025
+    Info: Processing started: Thu Dec 18 02:50:45 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off RhythmGame_Top -c RhythmGame_Top
 Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (12021): Found 1 design units, including 1 entities, in source file /work/piljoo/.git/logic-project/rhythm/sound.v
+    Info (12023): Found entity 1: Sound
 Info (12021): Found 1 design units, including 1 entities, in source file /work/piljoo/.git/logic-project/rhythm/ui.v
     Info (12023): Found entity 1: UI
 Info (12021): Found 1 design units, including 1 entities, in source file /work/piljoo/.git/logic-project/rhythm/rhythmgame_top.v
@@ -809,27 +832,28 @@ Info (12128): Elaborating entity "OnePushControl" for hierarchy "PushControl:u_I
 Info (12128): Elaborating entity "GameLogic" for hierarchy "GameLogic:u_GameCore"
 Warning (10230): Verilog HDL assignment warning at GameLogic.v(116): truncated value with size 32 to match size of target (16)
 Warning (10230): Verilog HDL assignment warning at GameLogic.v(118): truncated value with size 32 to match size of target (16)
-Warning (10230): Verilog HDL assignment warning at GameLogic.v(120): truncated value with size 32 to match size of target (8)
-Warning (10230): Verilog HDL assignment warning at GameLogic.v(135): truncated value with size 32 to match size of target (16)
-Warning (10230): Verilog HDL assignment warning at GameLogic.v(137): truncated value with size 32 to match size of target (16)
-Warning (10230): Verilog HDL assignment warning at GameLogic.v(139): truncated value with size 32 to match size of target (8)
-Warning (10230): Verilog HDL assignment warning at GameLogic.v(151): truncated value with size 32 to match size of target (16)
-Warning (10230): Verilog HDL assignment warning at GameLogic.v(153): truncated value with size 32 to match size of target (16)
-Warning (10230): Verilog HDL assignment warning at GameLogic.v(155): truncated value with size 32 to match size of target (8)
-Warning (10230): Verilog HDL assignment warning at GameLogic.v(167): truncated value with size 32 to match size of target (16)
-Warning (10230): Verilog HDL assignment warning at GameLogic.v(169): truncated value with size 32 to match size of target (16)
-Warning (10230): Verilog HDL assignment warning at GameLogic.v(171): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at GameLogic.v(122): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at GameLogic.v(138): truncated value with size 32 to match size of target (16)
+Warning (10230): Verilog HDL assignment warning at GameLogic.v(140): truncated value with size 32 to match size of target (16)
+Warning (10230): Verilog HDL assignment warning at GameLogic.v(143): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at GameLogic.v(156): truncated value with size 32 to match size of target (16)
+Warning (10230): Verilog HDL assignment warning at GameLogic.v(158): truncated value with size 32 to match size of target (16)
+Warning (10230): Verilog HDL assignment warning at GameLogic.v(161): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at GameLogic.v(174): truncated value with size 32 to match size of target (16)
+Warning (10230): Verilog HDL assignment warning at GameLogic.v(176): truncated value with size 32 to match size of target (16)
+Warning (10230): Verilog HDL assignment warning at GameLogic.v(179): truncated value with size 32 to match size of target (8)
 Info (12128): Elaborating entity "DotMatrix" for hierarchy "DotMatrix:u_Display"
 Warning (10230): Verilog HDL assignment warning at DotMatrix.v(17): truncated value with size 32 to match size of target (8)
 Warning (10230): Verilog HDL assignment warning at DotMatrix.v(44): truncated value with size 32 to match size of target (17)
 Info (12128): Elaborating entity "UI" for hierarchy "UI:u_UI"
-Warning (10230): Verilog HDL assignment warning at UI.v(16): truncated value with size 32 to match size of target (4)
-Warning (10230): Verilog HDL assignment warning at UI.v(17): truncated value with size 32 to match size of target (4)
 Warning (10230): Verilog HDL assignment warning at UI.v(18): truncated value with size 32 to match size of target (4)
 Warning (10230): Verilog HDL assignment warning at UI.v(19): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at UI.v(20): truncated value with size 32 to match size of target (4)
 Warning (10230): Verilog HDL assignment warning at UI.v(21): truncated value with size 32 to match size of target (4)
-Warning (10230): Verilog HDL assignment warning at UI.v(22): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at UI.v(23): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at UI.v(24): truncated value with size 32 to match size of target (4)
 Info (12128): Elaborating entity "FND" for hierarchy "UI:u_UI|FND:u_Score_0"
+Info (12128): Elaborating entity "Sound" for hierarchy "UI:u_UI|Sound:u_Sound"
 Info (278001): Inferred 10 megafunctions from design logic
     Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "UI:u_UI|Mod0"
     Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "UI:u_UI|Div0"
@@ -905,8 +929,6 @@ Info (12133): Instantiated megafunction "UI:u_UI|lpm_divide:Div3" with the follo
     Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
 Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_5am.tdf
     Info (12023): Found entity 1: lpm_divide_5am
-Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "o_Piezo" is stuck at GND
 Info (286030): Timing-Driven Synthesis is running
 Info (144001): Generated suppressed messages file C:/Work/PilJoo/.git/logic-project/Rhythm_FPGA/output_files/RhythmGame_Top.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
@@ -917,15 +939,15 @@ Warning (21074): Design contains 5 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "SW[5]"
     Warning (15610): No output dependent on input pin "SW[6]"
     Warning (15610): No output dependent on input pin "SW[7]"
-Info (21057): Implemented 1754 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 1827 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 15 input pins
     Info (21059): Implemented 69 output pins
-    Info (21061): Implemented 1670 logic cells
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 29 warnings
-    Info: Peak virtual memory: 4718 megabytes
-    Info: Processing ended: Tue Dec 16 16:39:45 2025
-    Info: Elapsed time: 00:00:04
-    Info: Total CPU time (on all processors): 00:00:04
+    Info (21061): Implemented 1743 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 27 warnings
+    Info: Peak virtual memory: 4715 megabytes
+    Info: Processing ended: Thu Dec 18 02:50:48 2025
+    Info: Elapsed time: 00:00:03
+    Info: Total CPU time (on all processors): 00:00:03
 
 
 +------------------------------------------+
