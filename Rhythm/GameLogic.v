@@ -41,7 +41,7 @@ module GameLogic (
     reg [1:0]  r_State;
     reg [31:0] r_Wait_Cnt;
     reg [15:0] r_Score, r_HighScore; 
-    reg [7:0]  r_Combo;
+    reg [7:0]  r_Combo, r_HighCombo;
     reg [9:0]  r_HP;
     reg [63:0] r_Map;       // 실제 맵 레지스터
     reg [31:0] r_Speed_Cnt;
@@ -118,6 +118,10 @@ module GameLogic (
                                     r_Score <= r_Score + 5;  o_Sound_Cmd <= 2'd2; // Good
                                 end
                                 r_Combo <= r_Combo + 1;
+
+                                if (r_Combo + 1 > r_HighCombo) begin
+                                    r_HighCombo <= r_Combo + 1;
+                                end
                                 v_Map_Temp[1:0] = 2'b00; // [중요] 임시 변수에서 삭제
                                 
                                 // 속도 증가 (난이도 상승)
@@ -223,9 +227,15 @@ module GameLogic (
     always @(*) begin
         o_Map_Data = r_Map;
         o_HP       = r_HP;
-        o_Combo    = r_Combo;
-        if (i_View_Mode) o_Score = r_HighScore;
-        else             o_Score = r_Score;
+
+        // [수정] 보기 모드(SW[2])에 따라 점수와 콤보를 세트로 보여줌
+        if (i_View_Mode) begin
+            o_Score = r_HighScore;  // 최고 점수
+            o_Combo = r_HighCombo;  // 최고 콤보
+        end else begin
+            o_Score = r_Score;      // 현재 점수
+            o_Combo = r_Combo;      // 현재 콤보
+        end
     end
 
 endmodule
