@@ -1,4 +1,6 @@
 module UI (
+    input  wire        i_Clk,
+    input  wire        i_Rst_n,
     input  wire [15:0] i_Score,      // 0 ~ 9999 점수
     input  wire [7:0]  i_Combo,      // 0 ~ 99 콤보
     input  wire [1:0]  i_Sound_Cmd,  // (나중에 사운드용)
@@ -36,9 +38,13 @@ module UI (
     FND u_Combo_1 (.sel(combo_10),   .o_FND(o_HEX5));
 
     // ---------------------------------------------
-    // 3. 사운드 (임시: 삑 소리)
+    // 3. 사운드 (간단한 멜로디 톤)
     // ---------------------------------------------
-    // 일단 소리는 나중에 하고 0으로 둡니다.
-    assign o_Piezo = 1'b0;
+    Sound u_Sound (
+        .i_Clk      (i_Clk),
+        .i_Rst_n    (i_Rst_n),
+        .i_Sound_Cmd(i_Sound_Cmd),
+        .o_Piezo    (o_Piezo)
+    );
 
 endmodule
