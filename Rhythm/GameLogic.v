@@ -33,7 +33,7 @@ module GameLogic (
 
     localparam SPEED_BASE_1X = 32'd25_000_000; 
     localparam SPEED_LIMIT   = 32'd5_000_000;
-    localparam SPEED_STEP    = 32'd100_000;
+    localparam SPEED_STEP    = 32'd50_000;
 
     // ==========================================
     // 5. 내부 레지스터

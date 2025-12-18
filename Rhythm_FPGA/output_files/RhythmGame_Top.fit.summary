@@ -1,12 +1,12 @@
-Fitter Status : Successful - Thu Dec 18 02:51:30 2025
+Fitter Status : Successful - Thu Dec 18 09:18:10 2025
 Quartus II 64-Bit Version : 13.1.0 Build 162 10/23/2013 SJ Web Edition
 Revision Name : RhythmGame_Top
 Top-level Entity Name : RhythmGame_Top
 Family : Cyclone V
 Device : 5CSEMA5F31C6
 Timing Models : Preliminary
-Logic utilization (in ALMs) : 877 / 32,070 ( 3 % )
-Total registers : 410
+Logic utilization (in ALMs) : 875 / 32,070 ( 3 % )
+Total registers : 422
 Total pins : 84 / 457 ( 18 % )
 Total virtual pins : 0
 Total block memory bits : 0 / 4,065,280 ( 0 % )
